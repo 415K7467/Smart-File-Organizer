@@ -44,7 +44,6 @@ class TestOrganizerGUI:
 
     def test_select_folder_noop_when_cancelled(self, gui, monkeypatch):
         monkeypatch.setattr("gui.filedialog.askdirectory", lambda: "")
-        gui.start()
         gui.select_folder()
         assert gui.folder_path.get() == ""
 
